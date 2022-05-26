@@ -24,7 +24,7 @@ var min = " ";
 var charLength  = function(){
   min = window.prompt("How many characters would you like in your password?");
   if(min >= 8 && min <= 128 ){
-    window.alert("Your password length is "+ min + ". Please choose at least one lowercase, uppercase, numeric, and/or special characters to include in your password.");
+    window.alert("Your password length is "+ min + ". You will be asked to choose at least one lowercase, uppercase, numeric, and/or special characters to include in your password. Please enter 'YES' or 'NO'.");
   }
   else {
     window.alert("Your password must be at least 8 characters and less than 129");
