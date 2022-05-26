@@ -11,10 +11,11 @@ This repository is a password generator displaying a random password to include 
 * Javascript
 
 ## Website
+https://lesanndra.github.io/password-generator/
 
 
 ## Screenshot
-![Getting Started]()
+![Getting Started](./assets/images/passwordgenerator.png)
 
 
 ## Contribution
