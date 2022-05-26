@@ -1,3 +1,18 @@
+// Get references to the #generate element
+var generateBtn = document.querySelector("#generate");
+//Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+}
+
+
+
 var chars = "!#$%&()*+-/;<=>?@[\]^_{|}~";
 var num = "0123456789";
 var alphabet = "abcdefghijklmnopqrstuvwxyz";
@@ -5,7 +20,7 @@ var alphabetUpper = alphabet.toUpperCase();
 var min = " ";
 
 
-/* Define the  length of the password*/
+//Define the  length of the password
 var charLength  = function(){
   min = window.prompt("How many characters would you like in your password?");
   if(min >= 8 && min <= 128 ){
@@ -18,7 +33,7 @@ var charLength  = function(){
   };
 
 
-/* generatePassword function*/
+//generatePassword function
 var generatePassword = function() {
 
   charLength();
@@ -31,7 +46,7 @@ var generatePassword = function() {
   var character = [];
  
 
-  /* if statement to include lowercase letters*/
+  //if statement to include lowercase letters
  var lowercase = window.prompt("Would you like to include lowercase letters in your password? Please answer Yes or No")
   if (lowercase === "yes" || lowercase === "YES" ){
     var lowercase = alphabet.split("").join("");
@@ -39,7 +54,7 @@ var generatePassword = function() {
   random.push(...lower);
   console.log(random);
   
- /* if statement to include uppercase letters*/
+ // if statement to include uppercase letters
   var uppercase = window.prompt("Would you like to include uppercase letters in your password?")
    if (uppercase === "yes" || uppercase === "YES" ){
     var uppercase = alphabetUpper.split("").join("");
@@ -47,7 +62,7 @@ var generatePassword = function() {
   random.push(...upper);
   console.log(random.join());
 
- /* if statement to include numbers*/
+ //if statement to include numbers
   var numbers = window.prompt("Would you like to include numbers in your password?")
    if (numbers === "yes" || numbers === "YES" ){
     var numbers = num.split("").join("");
@@ -55,7 +70,7 @@ var generatePassword = function() {
   random.push(...number);
   console.log(random.join());
   
- /* if statement to include special characters*/
+ //if statement to include special characters
   var characters = window.prompt("Would you like to include special characters in your password?")
 if (characters === "yes" || characters === "YES" ){
   character.push(chars)
@@ -63,21 +78,24 @@ if (characters === "yes" || characters === "YES" ){
   console.log(random.join());
 
 
-
   var passwordValue = "";
   
-/* for loop to iterate over random array*/
+//for loop to iterate over random array
 for (var i = 0; i < min; i++) 
     passwordValue = passwordValue + random.join().charAt(Math.floor(Math.random() * random.join().length));
 
-    console.log(passwordValue)
-    window.alert("Your password is " +  passwordValue)
+    return passwordValue;
+    
 
      }
     }
   } 
  }
 };
+
+
+
+
 
 
 
