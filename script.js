@@ -12,7 +12,7 @@ function writePassword() {
 }
 
 
-
+//Password variables
 var chars = "!#$%&()*+-/;<=>?@[\]^_{|}~";
 var num = "0123456789";
 var alphabet = "abcdefghijklmnopqrstuvwxyz";
@@ -24,7 +24,7 @@ var min = " ";
 var charLength  = function(){
   min = window.prompt("How many characters would you like in your password?");
   if(min >= 8 && min <= 128 ){
-    window.alert("Your Password length is "+ min);
+    window.alert("Your password length is "+ min + ". Please choose at least one lowercase, uppercase, numeric, and/or special characters to include in your password.");
   }
   else {
     window.alert("Your password must be at least 8 characters and less than 129");
@@ -53,7 +53,10 @@ var generatePassword = function() {
   lower.push(lowercase);
   random.push(...lower);
   console.log(random);
-  
+  } else if(lowercase === "no" || lowercase === "NO" ){
+    random.push();
+  }
+
  // if statement to include uppercase letters
   var uppercase = window.prompt("Would you like to include uppercase letters in your password?")
    if (uppercase === "yes" || uppercase === "YES" ){
@@ -61,6 +64,9 @@ var generatePassword = function() {
   upper.push(uppercase);
   random.push(...upper);
   console.log(random.join());
+   } else if(uppercase === "no" || uppercase === "NO" ){
+    random.push();
+   }
 
  //if statement to include numbers
   var numbers = window.prompt("Would you like to include numbers in your password?")
@@ -69,14 +75,19 @@ var generatePassword = function() {
   number.push(num);
   random.push(...number);
   console.log(random.join());
-  
+   } else if(numbers === "no" || numbers === "NO" ){
+    random.push();
+   }
+
  //if statement to include special characters
   var characters = window.prompt("Would you like to include special characters in your password?")
 if (characters === "yes" || characters === "YES" ){
   character.push(chars)
   random.push(...character);
   console.log(random.join());
-
+  } else if(characters === "no" || characters === "NO" ){
+    random.push();
+  }
 
   var passwordValue = "";
   
@@ -85,12 +96,7 @@ for (var i = 0; i < min; i++)
     passwordValue = passwordValue + random.join().charAt(Math.floor(Math.random() * random.join().length));
 
     return passwordValue;
-    
-
-     }
-    }
-  } 
- }
+     
 };
 
 
