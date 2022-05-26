@@ -81,7 +81,7 @@ var generatePassword = function() {
 
  //if statement to include special characters
   var characters = window.prompt("Would you like to include special characters in your password?")
-if (characters === "yes" || characters === "YES" ){
+  if (characters === "yes" || characters === "YES" ){
   character.push(chars)
   random.push(...character);
   console.log(random.join());
